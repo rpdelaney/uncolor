@@ -1,0 +1,25 @@
+# See also:
+#   * https://www.gitignore.io/api/python
+#   * https://github.com/github/gitignore/blob/master/Python.gitignore
+
+# Compiled files and bytecode
+*.py[cod]
+__pycache__
+
+# Test and linter caches
+.pytest_cache
+.mypy_cache
+.coverage
+.pythonrc.py
+
+# Build, distribution, and packaging
+dist/
+sdist/
+build/
+*.egg-info/
+*.egg
+
+# Sphinx
+docs/_build/
+
+.python-version
