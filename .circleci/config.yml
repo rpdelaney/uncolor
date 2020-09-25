@@ -1,38 +1,28 @@
 ---
 version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
 jobs:
-  lint_and_test_code:
-    docker:
-      - image: python:3.7.6-buster
+  build-and-test:
+    executor: python/default
     steps:
       - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
       - run:
-          name: Install build & test dependencies
-          command: |
-            pip3 install --disable-pip-version-check --progress-bar off 'poetry==1.0.9' 'pre-commit==2.4.0'
-            poetry config --no-interaction virtualenvs.create false
-            apt-get update && apt-get install shellcheck && apt-get install direnv
+          command: pre-commit run --all --show-diff-on-failure
+          name: lint
       - run:
-          name: Build & install
-          command: poetry build && poetry install
+          command: pytest --full-trace
+          name: test
       - run:
-          name: Run pre-commit hooks on all files
-          command: pre-commit run --all-files --show-diff-on-failure
-      - run:
-          name: Run tests
-          command: |
-            direnv allow
-            poetry run pytest --full-trace
-      - store_artifacts:
-          path: dist
-      - run:
-          name: Test basic cli elements
-          command: |
-            ( set -x ; isup --version ) 1>/dev/null
-            ( set -x ; isup --help ) 1>/dev/null
+          command: poetry build
+          name: build
 
 workflows:
-  version: 2.1
-  pipeline:
+  main:
     jobs:
-      - lint_and_test_code
+      - build-and-test
