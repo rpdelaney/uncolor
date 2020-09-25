@@ -32,6 +32,10 @@ mock_use_standalone_module = true
 line-length = 79
 target_version = ["py37"]
 
+[tool.poetry.dev-dependencies.isort]
+version = "^5.4"
+extras = [ "pyproject",]
+
 [tool.isort]
 [settings]
 combine_star = true
