@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - python/load-cache
-      - python/install-deps:
+      - python/install-packages:
           pkg-manager: poetry
       - run:
           command: pre-commit run --all --show-diff-on-failure
