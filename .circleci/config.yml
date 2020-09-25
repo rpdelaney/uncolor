@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - python/install-deps:
+          pkg-manager: poetry
       - run:
           command: pre-commit run --all --show-diff-on-failure
           name: lint
@@ -21,6 +21,7 @@ jobs:
       - run:
           command: poetry build
           name: build
+      - python/save-cache
 
 workflows:
   main:
