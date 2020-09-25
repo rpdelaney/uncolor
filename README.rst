@@ -1,7 +1,6 @@
 uncolor
 ======================
-|LANGUAGE| |VERSION| |LICENSE| |MAINTAINED| |CIRCLECI| |COVERAGE|
-|MAINTAINABILITY| |STYLE|
+|LANGUAGE| |VERSION| |LICENSE| |MAINTAINED| |CIRCLECI| |STYLE|
 
 .. |CIRCLECI| image:: https://img.shields.io/circleci/build/gh/rpdelaney/uncolor
    :target: https://circleci.com/gh/rpdelaney/uncolor/tree/master
