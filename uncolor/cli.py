@@ -1,5 +1,5 @@
-"""Define a command-line interface for the isup module.
-Call parse_args() to return an argument parser namespace
+"""Define a command-line interface for the module.
+Call parse_args() to return an argument parser namespace.
 """
 import argparse
 
