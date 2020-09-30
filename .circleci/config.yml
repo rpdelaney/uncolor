@@ -25,11 +25,6 @@ jobs:
             poetry run pytest --full-trace
       - store_artifacts:
           path: dist
-      - run:
-          name: Test basic cli elements
-          command: |
-            ( set -x ; isup --version ) 1>/dev/null
-            ( set -x ; isup --help ) 1>/dev/null
 
 workflows:
   version: 2.1
