@@ -20,7 +20,7 @@ pytest-mock = "^3.6.1"
 pytest-icdiff = "^0.5"
 pytest-cov = "^2.12.1"
 mypy = "^0.902"
-isort = "^5.9.1"
+isort = "^5.9.2"
 mock = "^4.0.3"
 
 [tool.poetry.scripts]
