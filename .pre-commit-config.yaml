@@ -28,6 +28,18 @@ repos:
       - id: check-toml
       - id: check-yaml
 
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.9.0  # Use the ref you want to point at
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+      - id: python-check-mock-methods
+      - id: python-use-type-annotations
+      - id: python-use-type-annotations
+      - id: rst-backticks
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+
   - repo: https://github.com/asottile/seed-isort-config
     rev: v2.2.0
     hooks:
@@ -35,7 +47,7 @@ repos:
 
   - repo: local
     hooks:
-      - id: pre-commit update
+      - id: pytest
         name: run all tests
         stages: [push]
         language: system
@@ -51,21 +63,18 @@ repos:
 
       - id: isort
         name: isort
-        stages: [commit]
         language: system
         entry: poetry run isort
         types: [python]
 
       - id: black
         name: black
-        stages: [commit]
         language: system
         entry: poetry run black
         types: [python]
 
       - id: flake8
         name: flake8
-        stages: [commit]
         language: system
         entry: poetry run flake8
         types: [python]
