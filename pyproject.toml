@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uncolor"
-version = "0.1.0"
+version = "0.1.1"
 description = "strips ANSI colors from a data stream"
 authors = ["Ryan Delaney <ryan.patrick.delaney@protonmail.com>"]
 #classifiers = [ ]
