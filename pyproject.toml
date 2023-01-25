@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "uncolor"
-version = "0.1.3"
+version = "0.1.4"
 description = "strips ANSI colors from a data stream"
 license = "Apache 2.0"
 authors = ["Ryan Delaney <ryan.patrick.delaney+git@protonmail.com>"]
