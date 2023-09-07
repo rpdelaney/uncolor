@@ -27,7 +27,7 @@ jobs:
         run: poetry build && poetry install
 
       - name: Run pre-commit hooks on all files
-        run: pre-commit run --all-files --show-diff-on-failure
+        run: poetry run pre-commit run --all-files --show-diff-on-failure
 
       - name: Run tests
         run: |-
