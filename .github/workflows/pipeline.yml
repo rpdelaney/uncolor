@@ -19,7 +19,6 @@ jobs:
       - name: Install build & test dependencies
         run: |-
           pip3 install --disable-pip-version-check --progress-bar off poetry pre-commit
-          apt-get update && apt-get install shellcheck && apt-get install direnv
 
       - name: Build & install
         run: poetry build && poetry install
@@ -28,9 +27,7 @@ jobs:
         run: poetry run pre-commit run --all-files --show-diff-on-failure
 
       - name: Run tests
-        run: |-
-          direnv allow
-          poetry run pytest --full-trace
+        run: poetry run pytest --full-trace
 
       - uses: actions/upload-artifact@v3.1.3
         with:
