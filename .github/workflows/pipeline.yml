@@ -11,7 +11,7 @@ jobs:
     container:
       image: python:3.11.4-buster
     steps:
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v3.6.0
 
       - name: Set up Python
         uses: actions/setup-python@v4.7.0
@@ -34,6 +34,6 @@ jobs:
           direnv allow
           poetry run pytest --full-trace
 
-      - uses: actions/upload-artifact@v3.1.1
+      - uses: actions/upload-artifact@v3.1.3
         with:
           path: dist
