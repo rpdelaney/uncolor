@@ -11,22 +11,14 @@
     ],
     "packageRules": [
         {
-            "matchUpdateTypes": [
-                "major"
-            ],
-            "groupName": "dependencies",
-            "reviewers": [
-                "rpdelaney"
-            ]
-        },
-        {
             "automerge": true,
             "groupName": "dependencies",
             "matchUpdateTypes": [
                 "patch",
                 "pin",
                 "digest",
-                "minor"
+                "minor",
+                "major"
             ]
         }
     ],
