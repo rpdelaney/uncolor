@@ -9,10 +9,10 @@ jobs:
   lint_and_test_code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.0.0
+      - uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5.0.0
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: 3.11.4
 
@@ -29,6 +29,6 @@ jobs:
       - name: Run tests
         run: poetry run pytest --full-trace
 
-      - uses: actions/upload-artifact@v3.1.3
+      - uses: actions/upload-artifact@v3.2.1
         with:
           path: dist
